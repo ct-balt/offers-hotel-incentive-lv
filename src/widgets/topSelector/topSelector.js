@@ -2,7 +2,9 @@ function listDestinations(destinations, values) {
   const destSelectorDiv = document.querySelector(".destination-selector");
 
   destinations.map((dest, index) => {
-    const destinationValue = values[index];
+    const destinationValue = values[index]
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
 
     const existingButton = destSelectorDiv.querySelector(
       `button[data-destination="${destinationValue}"]`

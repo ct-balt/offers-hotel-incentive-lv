@@ -113,7 +113,11 @@ const getStayNights = () => {
   const { destination, date } = selectedValues;
 
   const country = offersObj.destinations.find(
-    (c) => c.destinationDisplayName.toLowerCase() === destination
+    (c) =>
+      c.destinationDisplayName
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase() === destination
   );
 
   const allStayNights = country.destination.flatMap((city) => {
