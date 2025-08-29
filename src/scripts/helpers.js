@@ -60,7 +60,7 @@ function updateSelectedValues(newValues = {}) {
 
 function changeDepartureItem() {
   const deparSelectorBtn = document.querySelector(".departure-selector span");
-  deparSelectorBtn.innerHTML = `iš ${selectedDeparture}`;
+  deparSelectorBtn.innerHTML = `no ${selectedDeparture}`;
 }
 
 function removeListOffers() {

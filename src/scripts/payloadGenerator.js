@@ -38,7 +38,7 @@ const generatePayloadPriceSearchEncrypt = () => {
 };
 
 const generatePayloadPriceSearchList = (priceSearchEncryptResponse) => {
-  viewAllUrl = `https://www.coraltravel.lt${priceSearchEncryptResponse.result.redirectionUrl}?qp=${priceSearchEncryptResponse.result.queryParam}&p=1&w=0&s=0&ws=10`;
+  viewAllUrl = `https://www.coraltravel.lv${priceSearchEncryptResponse.result.redirectionUrl}?qp=${priceSearchEncryptResponse.result.queryParam}&p=1&w=0&s=0&ws=10`;
 
   const payload = {
     queryParam: priceSearchEncryptResponse.result.queryParam,
@@ -65,34 +65,14 @@ const getDestinationLocation = () => {
   const destinationObj = getDestinationObj();
 
   if (!destinationObj.children) {
-    if (destinationObj.country === "juodkalnija") {
-      const additionalValues = destinationsConstants.find(
-        (destination) => destination.friendlyUrl === "kroatija"
-      );
-      return [
-        {
-          id: destinationObj.id,
-          type: destinationObj.type,
-          name: destinationObj.name,
-          friendlyUrl: destinationObj.friendlyUrl,
-        },
-        {
-          id: additionalValues.id,
-          type: additionalValues.type,
-          name: additionalValues.name,
-          friendlyUrl: additionalValues.friendlyUrl,
-        },
-      ];
-    } else {
-      return [
-        {
-          id: destinationObj.id,
-          type: destinationObj.type,
-          name: destinationObj.name,
-          friendlyUrl: destinationObj.friendlyUrl,
-        },
-      ];
-    }
+    return [
+      {
+        id: destinationObj.id,
+        type: destinationObj.type,
+        name: destinationObj.name,
+        friendlyUrl: destinationObj.friendlyUrl,
+      },
+    ];
   }
   const matchedDestination = offersObj.destinations.find(
     (dest) =>

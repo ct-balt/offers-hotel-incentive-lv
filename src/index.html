@@ -16,7 +16,7 @@
   </head>
   <body>
     <section class="offers-incentive">
-      <h2>Paskutinės minutės pasiūlymai</h2>
+      <h2>Pēdējā brīža piedāvājumi</h2>
       <div class="selector">
         <div class="destination-selector"></div>
         <div class="departure-selector-wrapper">
@@ -41,7 +41,7 @@
         <div class="side-selector">
           <div class="wrapper">
             <div class="date-selector">
-              <span>Pasirinkite išvykimo datą</span>
+              <span>Izvēlies izlidošanas datumu</span>
               <div class="date-items"></div>
             </div>
             <div class="separator"></div>
@@ -49,7 +49,7 @@
               type="button"
               class="additional-filters-button"
               onclick="toggleFilters()">
-              <span>Filtrai</span
+              <span>Filtri</span
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -64,7 +64,7 @@
             </button>
             <div class="additional-filters">
               <div class="hotel-category">
-                <span>Viešbučio kategorija</span>
+                <span>Viesnīcas kategorija</span>
                 <div class="items"></div>
               </div>
               <div class="buttons">
@@ -72,13 +72,13 @@
                   type="button"
                   class="remove-filters"
                   onclick="removeFilters()">
-                  Panaikinti filtrus
+                  Attiestatīt filtrus
                 </button>
                 <button
                   type="button"
                   class="submit-filters"
                   onclick="applyFilters()">
-                  Pritaikyti filtrus
+                  Piemērot
                 </button>
               </div>
             </div>
@@ -90,167 +90,68 @@
       var offers = {
         destinations: [
           {
-            destinationDisplayName: "Turkija",
+            destinationDisplayName: "Turcija",
             destination: [
               {
                 name: "antalija",
                 departures: {
-                  displayName: ["Vilniaus", "Kauno"],
-                  name: ["vilnius", "kaunas"],
-                },
-                beginDates: [
-                  {
-                    date: "2025-08-28",
-                    stayNights: [
-                      { value: 6 },
-                      { value: 7 },
-                      { value: 9 },
-                      { value: 10 },
-                    ],
-                    departures: ["vilnius"],
-                  },
-                  {
-                    date: "2025-08-29",
-                    stayNights: [
-                      { value: 5 },
-                      { value: 6 },
-                      { value: 8 },
-                      { value: 9 },
-                    ],
-                    departures: ["vilnius"],
-                  },
-                  {
-                    date: "2025-09-01",
-                    stayNights: [
-                      { value: 3 },
-                      { value: 4 },
-                      { value: 6 },
-                      { value: 7 },
-                      { value: 9 },
-                      { value: 10 },
-                    ],
-                    departures: ["vilnius"],
-                  },
-                  {
-                    date: "2025-09-02",
-                    stayNights: [
-                      { value: 4 },
-                      { value: 5 },
-                      { value: 7 },
-                      { value: 8 },
-                      { value: 9 },
-                      { value: 11 },
-                      { value: 12 },
-                    ],
-                    departures: ["vilnius"],
-                  },
-                  {
-                    date: "2025-09-05",
-                    stayNights: [
-                      { value: 5 },
-                      { value: 6 },
-                      { value: 8 },
-                      { value: 9 },
-                      { value: 10 },
-                    ],
-                    departures: ["vilnius"],
-                  },
-                  {
-                    date: "2025-09-09",
-                    stayNights: [
-                      { value: 7 },
-                      { value: 8 },
-                      { value: 9 },
-                      { value: 13 },
-                    ],
-                    departures: ["vilnius"],
-                  },
-                  {
-                    date: "2025-09-12",
-                    stayNights: [{ value: 6 }, { value: 10 }],
-                    departures: ["vilnius"],
-                  },
-                  {
-                    date: "2025-09-14",
-                    stayNights: [{ value: 7 }, { value: 8 }],
-                    departures: ["vilnius"],
-                  },
-                  {
-                    date: "2025-09-15",
-                    stayNights: [{ value: 7 }],
-                    departures: ["kaunas"],
-                  },
-                  {
-                    date: "2025-09-22",
-                    stayNights: [{ value: 7 }],
-                    departures: ["kaunas"],
-                  },
-                ],
-              },
-              {
-                name: "bodrumas",
-                departures: {
-                  displayName: ["Vilniaus"],
-                  name: ["vilnius"],
-                },
-                beginDates: [
-                  {
-                    date: "2025-09-12",
-                    stayNights: [{ value: 7 }],
-                    departures: ["vilnius"],
-                  },
-                  {
-                    date: "2025-09-19",
-                    stayNights: [{ value: 7 }],
-                    departures: ["vilnius"],
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            destinationDisplayName: "Graikija",
-            destination: [
-              {
-                name: "graikija",
-                departures: {
-                  displayName: ["Vilniaus"],
-                  name: ["vilnius"],
-                },
-                beginDates: [
-                  {
-                    date: "2025-09-13",
-                    stayNights: [{ value: 7 }],
-                    departures: ["vilnius"],
-                  },
-                  {
-                    date: "2025-09-20",
-                    stayNights: [{ value: 7 }],
-                    departures: ["vilnius"],
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            destinationDisplayName: "Juodkalnija",
-            destination: [
-              {
-                name: "juodkalnija",
-                departures: {
-                  displayName: ["Vilniaus"],
-                  name: ["vilnius"],
+                  displayName: ["Rīgas"],
+                  name: ["riga"],
                 },
                 beginDates: [
                   {
                     date: "2025-09-03",
                     stayNights: [{ value: 7 }],
-                    departures: ["vilnius"],
+                    departures: ["riga"],
                   },
                   {
-                    date: "2025-09-21",
+                    date: "2025-09-04",
                     stayNights: [{ value: 7 }],
-                    departures: ["vilnius"],
+                    departures: ["riga"],
+                  },
+                  {
+                    date: "2025-09-06",
+                    stayNights: [{ value: 6 }],
+                    departures: ["riga"],
+                  },
+                  {
+                    date: "2025-09-12",
+                    stayNights: [{ value: 7 }],
+                    departures: ["riga"],
+                  },
+                  {
+                    date: "2025-09-13",
+                    stayNights: [{ value: 7 }],
+                    departures: ["riga"],
+                  },
+                  {
+                    date: "2025-09-18",
+                    stayNights: [{ value: 3 }, { value: 6 }, { value: 7 }],
+                    departures: ["riga"],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            destinationDisplayName: "Grieķija",
+            destination: [
+              {
+                name: "heraklion",
+                departures: {
+                  displayName: ["Rīgas"],
+                  name: ["riga"],
+                },
+                beginDates: [
+                  {
+                    date: "2025-09-13",
+                    stayNights: [{ value: 7 }],
+                    departures: ["riga"],
+                  },
+                  {
+                    date: "2025-09-14",
+                    stayNights: [{ value: 7 }],
+                    departures: ["riga"],
                   },
                 ],
               },

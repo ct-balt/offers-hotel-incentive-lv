@@ -44,8 +44,8 @@ function showLoadingBanner() {
               </defs>
             </svg>
             <div class="text">
-              <span class="title">Renkame geriausius pasiūlymus</span>
-              <span class="subtitle">Prašome palaukti...</span>
+              <span class="title">Mēs apkopojam labākos piedāvājumus.</span>
+              <span class="subtitle">Lūdzu, uzgaidi...</span>
             </div>
           </div>
           <div class="loading-spinner"></div>`;
@@ -83,8 +83,8 @@ function showWarningBanner() {
 </defs>
 </svg>
             <div class="text">
-              <span class="title">Nėra tinkamų variantų</span>
-              <span class="subtitle">Prašome pabandyti pakeisti išvykimo datą / miestą</span>
+              <span class="title">Nav atbilstošu variantu</span>
+              <span class="subtitle">Lūdzu, pamēģini mainīt izlidošanas datumu / pilsētu</span>
             </div>
           </div>`;
 

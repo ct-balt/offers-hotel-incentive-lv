@@ -20,7 +20,7 @@ function listOffers(priceSearchListResponse) {
   viewAllBtn.className = "view-all-btn";
   viewAllBtn.href = viewAllUrl;
   viewAllBtn.target = "_blank";
-  viewAllBtn.textContent = "Visi pasiūlymai";
+  viewAllBtn.textContent = "Vairāk";
 
   listDiv.appendChild(viewAllBtn);
 }
@@ -29,7 +29,7 @@ function createProductCard(product) {
   const cardDiv = document.createElement("div");
   cardDiv.className = "card";
 
-  const redirectUrl = `https://www.coraltravel.lt/hotels${product?.offers[0]?.link?.redirectionUrl}/?qp=${product?.offers[0]?.link?.queryParam}&p=1&w=0&s=0&ws=10`;
+  const redirectUrl = `https://www.coraltravel.lv/hotels${product?.offers[0]?.link?.redirectionUrl}/?qp=${product?.offers[0]?.link?.queryParam}&p=1&w=0&s=0&ws=10`;
 
   cardDiv.innerHTML = `
     <div class="info">
@@ -190,16 +190,16 @@ function createProductCard(product) {
             <div class="price-info">
               <div class="top">
                 <div class="price">
-                  <span class="price-from">kaina nuo</span>
+                  <span class="price-from">cena no</span>
                   ${getOldPrice(product?.offers[0]?.price)}
                   
                   <span class="current-price">${getFormattedPrice(
                     product?.offers[0]?.price?.amount
-                  )} € / paketas </span>
+                  )} € / pakete </span>
                   <span class="current-price-per-person">
                     ${getFormattedPrice(
                       product?.offers[0]?.price?.perPersonAmount
-                    )} € / asm.
+                    )} € / personai
                   </span>
                 </div>
                 <div class="additional-price-info">
@@ -247,11 +247,11 @@ function createProductCard(product) {
                         </clipPath>
                       </defs>
                     </svg>
-                    <span>Skrydis įskaičiuotas</span>
+                    <span>Lidojums iekļauts</span>
                   </div>
                 </div>
               </div>
-              <a href=${redirectUrl} target="_blank" class="choose-button">Rinktis</a>
+              <a href=${redirectUrl} target="_blank" class="choose-button">Atlasīt viesnīcu</a>
             </div>
             `;
 
@@ -276,7 +276,7 @@ const getOldPrice = (priceObj) => {
     <div class="old-price-wrapper">
       <span class="old-price">${getFormattedPrice(
         priceObj.oldAmount
-      )} € / paketas</span>
+      )} € / pakete</span>
       <span class="discount">- ${Math.floor(
         priceObj.oldAmount - priceObj.amount
       )} €</span>
