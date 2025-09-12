@@ -19,7 +19,6 @@ function listOffers(priceSearchListResponse) {
   const viewAllBtn = document.createElement("a");
   viewAllBtn.className = "view-all-btn";
   viewAllBtn.href = viewAllUrl;
-  viewAllBtn.target = "_blank";
   viewAllBtn.textContent = "Vairāk";
 
   listDiv.appendChild(viewAllBtn);
@@ -33,7 +32,7 @@ function createProductCard(product) {
 
   cardDiv.innerHTML = `
     <div class="info">
-              <a href=${redirectUrl} target="_blank" class="image-wrapper">
+              <a href=${redirectUrl} class="image-wrapper">
                 <img
                   src=${product?.hotel?.images[0]?.sizes[0]?.url}
                   alt="${product?.hotel?.name}"
@@ -251,7 +250,7 @@ function createProductCard(product) {
                   </div>
                 </div>
               </div>
-              <a href=${redirectUrl} target="_blank" class="choose-button">Atlasīt viesnīcu</a>
+              <a href=${redirectUrl} class="choose-button">Atlasīt viesnīcu</a>
             </div>
             `;
 
