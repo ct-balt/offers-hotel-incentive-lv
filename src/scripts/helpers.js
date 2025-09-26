@@ -16,7 +16,7 @@ function attachButtonsListener(selector, datasetSelector, func) {
 function setSelectedDestination(text, value) {
   selectedDestination = text;
 
-  updateSelectedValues({ destination: value });
+  updateSelectedValues({ destination: value.replace(/\s+/g, "") });
 
   loadAvailableDepartures();
   loadAvailableDates();

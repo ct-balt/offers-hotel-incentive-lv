@@ -117,7 +117,8 @@ const getStayNights = () => {
       c.destinationDisplayName
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
-        .toLowerCase() === destination
+        .toLowerCase()
+        .replace(/\s+/g, "") === destination
   );
 
   const allStayNights = country.destination.flatMap((city) => {
