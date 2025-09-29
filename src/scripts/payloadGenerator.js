@@ -76,8 +76,11 @@ const getDestinationLocation = () => {
   }
   const matchedDestination = offersObj.destinations.find(
     (dest) =>
-      dest.destinationDisplayName.toLowerCase() ===
-        destinationObj.friendlyUrl &&
+      dest.destinationDisplayName
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/\s+/g, "") === destinationObj.friendlyUrl &&
       dest.destination?.some((city) =>
         city.beginDates?.filter(
           (dateObj) => dateObj.date === selectedValues.date
