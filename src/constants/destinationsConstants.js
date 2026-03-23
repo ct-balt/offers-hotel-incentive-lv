@@ -33,6 +33,12 @@ const destinationsConstants = [
         name: "Heraklion",
         friendlyUrl: "heraklion",
       },
+      {
+        id: "773-3-43-0",
+        type: 3,
+        name: "Rodas",
+        friendlyUrl: "rodas",
+      },
     ],
   },
   {
@@ -77,6 +83,26 @@ const destinationsConstants = [
         name: "Tenerife",
         friendlyUrl: "tenerife",
       },
+      {
+        id: "12049-3-42-0",
+        type: 3,
+        name: "Maljorka",
+        friendlyUrl: "maljorka",
+      },
+      {
+        id: "112-3-42-0",
+        type: 3,
+        name: "Barselona",
+        friendlyUrl: "barselona",
+      },
     ],
+  },
+  {
+    country: "melnkalne",
+    name: "Melnkalne",
+    friendlyUrl: "melnkalne",
+    id: "80-0",
+    type: 0,
+    children: null,
   },
 ];
