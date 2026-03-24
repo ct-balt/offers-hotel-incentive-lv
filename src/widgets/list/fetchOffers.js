@@ -16,19 +16,19 @@ async function fetchOffers() {
     const priceSearchEncryptResponse = await callApi(
       "https://www.coraltravel.lv/endpoints/PackageTourHotelProduct/PriceSearchEncrypt",
       payload,
-      { signal }
+      { signal },
     );
 
     if (!priceSearchEncryptResponse) return;
 
     const priceSearchPayload = generatePayloadPriceSearchList(
-      priceSearchEncryptResponse
+      priceSearchEncryptResponse,
     );
 
     const priceSearchListResponse = await callApi(
       "https://www.coraltravel.lv/endpoints/PackageTourHotelProduct/PriceSearchList",
       priceSearchPayload,
-      { signal }
+      { signal },
     );
 
     hideBanner("warning");
@@ -42,7 +42,7 @@ async function fetchOffers() {
       if (!fallbackUrl) {
         showWarningBanner();
       } else {
-        const url = `https://www.coraltravel.lv${fallbackUrl.result.redirectionUrl}?qp=${fallbackUrl.result.queryParam}&p=1&w=0&s=0&ws=10`;
+        const url = `https://www.coraltravel.lv${fallbackUrl.result.redirectionUrl}?${fallbackUrl.result.queryParam}&p=1&w=0&s=0&ws=10`;
         showAltSearchBanner(url);
       }
     }
